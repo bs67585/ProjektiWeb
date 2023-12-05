@@ -1,0 +1,35 @@
+body {
+    background: no-repeat url("../Images/background-image.jpg");
+    background-position: top;
+    background-size: 70%;
+    background-position-x: right;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    /* position: fixed; */
+    /* width: 100vh; */
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.nav-opt {
+    margin: 0 10px;
+}
+
+.nav-opt a {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.active, .nav-opt:hover {
+    border-bottom: 2px solid orangered;
+}
