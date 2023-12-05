@@ -102,3 +102,28 @@ h1 {
     background-color: orangered;
     height: 500px;
 }
+
+.tb-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+}
+.tabela {
+    border-collapse: collapse;
+}
+.tabela th {
+    background-color: orangered;
+    padding: 15px;
+    color: white;
+    border: 1px solid lightgray;
+}
+.tabela td {
+    padding: 15px;
+    border: 1px solid lightgray;
+
+    
+}
