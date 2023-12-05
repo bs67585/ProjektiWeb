@@ -101,6 +101,10 @@ h1 {
     width: 100%;
     background-color: orangered;
     height: 500px;
+    
+}
+.hapsira {
+    height: 700px;
 }
 
 .tb-container {
@@ -120,10 +124,13 @@ h1 {
     padding: 15px;
     color: white;
     border: 1px solid lightgray;
+    width: fit-content;
+    text-wrap: nowrap;
 }
 .tabela td {
     padding: 15px;
     border: 1px solid lightgray;
-
+    width: fit-content;
+    text-wrap: nowrap;
     
 }
