@@ -1,21 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
 body {
+    font-family: sans-serif;
+}
+
+.home {
     background: no-repeat url("../Images/background-image.jpg");
     background-position: top;
     background-size: 65%;
     background-position-x: right;
-    font-family: sans-serif ;
 }
 
 .navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     background-color: transparent;
     max-width: 100vw;
     width: 100%;
 }
+
 .logo {
     margin: 10px;
     font-weight: 900;
@@ -40,13 +49,15 @@ body {
     color: black;
 }
 
-.active, .nav-opt:hover {
+.active,
+.nav-opt:hover {
     border-bottom: 2px solid orangered;
 }
-.container {
+
+.top-container {
     display: flex;
     flex-direction: row;
-    margin: 500px 10%;
+    margin: 500px 10% 0px 10%;
 }
 
 .slider {
@@ -63,4 +74,31 @@ body {
     margin: 0px 0px 0px 25px;
     height: 390px;
     background-color: brown;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+h1 {
+    margin: 10% 0% 2% 0%;
+    text-align: center;
+}
+
+.lajmi {
+    width: 250px;
+    height: 250px;
+    margin: 15px;
+    background-color: blue;
+}
+
+.footeri {
+    margin-top: 25px;
+    display: flex;
+    max-width: 100vw;
+    width: 100%;
+    background-color: orangered;
+    height: 500px;
 }
