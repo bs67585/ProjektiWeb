@@ -10,22 +10,23 @@
 
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="../Images/fbk-logo1.png" alt="Logo">
-        </div>
-        <div class="input">
-            <p>Username</p>
-            <input type="text">
-        </div>
-        <div class="input">
-            <p>Password</p>
-            <input type="password">
-        </div>
-        <div class="btn">
-            <button>Log in</button>
-        </div>
-        <a href="register.html">Sign up</a>
+            <div class="logo">
+                <img src="../Images/fbk-logo1.png" alt="Logo">
+            </div>
+            <div class="input">
+                <p>Username</p>
+                <input type="text" id="user-login">
+            </div>
+            <div class="input">
+                <p>Password</p>
+                <input type="password" id="pass-login">
+            </div>
+            <div class="btn">
+                <button onclick="validateForm()">Log in</button>
+            </div>
+            <a href="register.html">Sign up</a>
     </div>
 </body>
+<script src="../Scripts/validimi.js"></script>
 
 </html>
