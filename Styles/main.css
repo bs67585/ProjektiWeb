@@ -251,5 +251,10 @@ font-size: large;
     text-align: center;
     padding-top: 50px;
     color: orangered;
+}
 
+.footer-content svg {
+    width: 25px;
+    height: 25px;
+    padding: 8%;
 }
