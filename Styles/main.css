@@ -25,6 +25,10 @@ body {
     width: 100%;
 }
 
+.scrolled {
+    background-color: white;
+}
+
 .logo {
     margin: 10px;
     font-weight: 900;
