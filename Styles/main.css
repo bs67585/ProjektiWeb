@@ -145,11 +145,13 @@ h1 {
     flex-direction: column;
     margin: 3% 10%;
     width: 20vw;
+    text-wrap: nowrap;
 }
 .ekipi {
     display: flex;
     flex-direction: row;
     margin-bottom: 25px;
+    align-items: center;
 }
 .ekipet img {
     width: 75px;
