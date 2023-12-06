@@ -123,12 +123,27 @@ h1 {
 }
 
 .lajmi {
-    width: 250px;
+    width: 450px;
     height: 250px;
     margin: 15px;
-    background-color: blue;
+    display: flex;
+    border: 1px solid lightgray;
+    text-align: center;
+    border-radius: 3%;
 }
-
+.lajmi img {
+    border-radius: 3% 0% 0% 3%;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+.content p {
+    margin-top: 30%;
+    font-size: small;
+}
 .hapsira {
     height: 700px;
 }

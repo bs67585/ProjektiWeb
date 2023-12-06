@@ -1,7 +1,8 @@
+//Navbar
 var scrollPosition = window.scrollY;
 var logoContainer = document.getElementById('nav');
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
 
     scrollPosition = window.scrollY;
 
@@ -12,3 +13,18 @@ window.addEventListener('scroll', function() {
     }
 
 });
+
+//Slider
+i = 0;
+let imgArray = ['C:/Users/Admin/Desktop/Web/Projekti/ProjektiWeb/Images/slider-image.jpg', 'C:/Users/Admin/Desktop/Web/Projekti/ProjektiWeb/Images/slider-image-2.jpg', '../Images/slider-image-3.jpg'];
+
+function nextImage() {
+    if (i < imgArray.length - 1) {
+        document.getElementById('imazhet').src(imgArray[i]);
+        i++;
+    } else {
+        i = 0;
+    }
+}
+
+document.addEventListener(onload(document.getElementById('imazhet').src(imgArray[i])));
