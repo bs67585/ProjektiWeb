@@ -16,15 +16,23 @@ window.addEventListener('scroll', function () {
 
 //Slider
 i = 0;
-let imgArray = ['C:/Users/Admin/Desktop/Web/Projekti/ProjektiWeb/Images/slider-image.jpg', 'C:/Users/Admin/Desktop/Web/Projekti/ProjektiWeb/Images/slider-image-2.jpg', '../Images/slider-image-3.jpg'];
+let imgArray = ['../Images/slider-image.jpg', '../Images/slider-image-2.jpg', '../Images/slider-image-3.jpg'];
 
 function nextImage() {
-    if (i < imgArray.length - 1) {
-        document.getElementById('imazhet').src(imgArray[i]);
+    if (i <= imgArray.length - 1) {
+        document.getElementById('imazhet').src = imgArray[i];
         i++;
     } else {
         i = 0;
     }
 }
 
-document.addEventListener(onload(document.getElementById('imazhet').src(imgArray[i])));
+function previousImage() {
+    if (i >= 0) {
+        document.getElementById('imazhet').src = imgArray[i];
+        i--;
+    } else {
+        i = imgArray.length - 1;
+    }
+}
+// document.addEventListener(onload(document.getElementById('imazhet').src = imgArray[i]));
