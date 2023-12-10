@@ -21,15 +21,43 @@
             <p>E-mail</p>
             <input type="email" id="email-register">
         </div>
+        <div id="register-email-error" style="color: red;"></div>
         <div class="input">
             <p>Password</p>
             <input type="password" id="pass-register">
         </div>
+        <div id="register-pass-error" style="color: red;"></div>
         <div class="btn">
             <button onclick="validateForm()">Sign up</button>
         </div>
         <a href="login.html">Log in</a>
     </div>
 </body>
-<script src="../Scripts/validimi.js"></script>
+<script>
+
+    let emailRegex = /^[a-zA-Z.-_]+@+[a-z]+\.+[a-z]{1,3}$/;
+    let passwordRegex = /^[a-zA-Z]+[0-9]{1,3}$/;
+
+    function validateForm() {
+        let email = document.getElementById('email-register');
+        let passRegister = document.getElementById('pass-register');
+
+        if (!emailRegex.test(email.value)) {
+            document.getElementById('register-email-error').innerHTML = 'Invalid Email'
+            return;
+        } else {
+            document.getElementById('register-email-error').innerHTML = ''
+        }
+
+        if (!passwordRegex.test(passRegister.value)) {
+            document.getElementById('register-pass-error').innerHTML = 'Invalid Password'
+            return;
+        } else {
+            document.getElementById('register-pass-error').innerHTML = ''
+        }
+
+    }
+
+</script>
+
 </html>

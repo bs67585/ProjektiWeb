@@ -35,4 +35,4 @@ function previousImage() {
         i = imgArray.length - 1;
     }
 }
-// document.addEventListener(onload(document.getElementById('imazhet').src = imgArray[i]));
+
