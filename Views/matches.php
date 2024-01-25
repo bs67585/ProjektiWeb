@@ -13,9 +13,9 @@
         <div class="navbar" id="nav">
             <div class="logo">LOGO</div>
             <ul class="nav-menu">
-                <li class="nav-opt"><a href="index.html">Home</a></li>
-                <li class="nav-opt"><a href="teams.html">Ekipet</a></li>
-                <li class="nav-opt"><a href="matches.html">Garat</a></li>
+                <li class="nav-opt"><a href="index.php">Home</a></li>
+                <li class="nav-opt"><a href="teams.php">Ekipet</a></li>
+                <li class="nav-opt"><a href="matches.php">Garat</a></li>
                 <li class="nav-opt"><a href="login.php">Profili</a></li>
             </ul>
         </div>
