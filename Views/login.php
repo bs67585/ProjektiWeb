@@ -25,7 +25,7 @@
         <div class="btn">
             <button onclick="validateForm()">Log in</button>
         </div>
-        <a href="register.html">Sign up</a>
+        <a href="register.php">Sign up</a>
     </div>
 </body>
 <script>

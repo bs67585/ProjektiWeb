@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Styles/main.css">
-    <title>Home</title>
+    <title>Ekipet</title>
 </head>
 
-<body class="home">
+<body>
     <header>
         <div class="navbar" id="nav">
             <div class="logo">LOGO</div>
@@ -16,108 +16,60 @@
                 <li class="nav-opt"><a href="index.html">Home</a></li>
                 <li class="nav-opt"><a href="teams.html">Ekipet</a></li>
                 <li class="nav-opt"><a href="matches.html">Garat</a></li>
-                <li class="nav-opt"><a href="login.html">Profili</a></li>
+                <li class="nav-opt"><a href="login.php">Profili</a></li>
             </ul>
         </div>
     </header>
-    <div class="top-container">
-        <div class="slider">
-            <img id="imazhet" src="../Images/slider-image.jpg">
-            <button class="img-btn right" onclick="nextImage()">
-                <svg fill="#000000" height="200px" width="200px" version="1.1" id="Layer_1"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330"
-                    xml:space="preserve">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path id="XMLID_222_"
-                            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z">
-                        </path>
-                    </g>
-                </svg>
-            </button>
-            <button class="img-btn left" onclick="previousImage()">
-                <svg fill="#000000" height="200px" width="200px" version="1.1" id="Layer_1"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330"
-                    xml:space="preserve">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path id="XMLID_222_"
-                            d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z">
-                        </path>
-                    </g>
-                </svg>
-            </button>
-        </div>
-        <div class="table">
-            <table class="tabela-home">
-                <tr>
-                    <th>#</th>
-                    <th>Ekipi</th>
-                    <th>Fitoret</th>
-                    <th>Humbjet</th>
-                    <th>Piket</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Trepca</td>
-                    <td>9</td>
-                    <td>2</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Peja</td>
-                    <td>8</td>
-                    <td>3</td>
-                    <td>19</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Golden Eagle Ylli</td>
-                    <td>7</td>
-                    <td>4</td>
-                    <td>18</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Sigal Prishtina</td>
-                    <td>7</td>
-                    <td>4</td>
-                    <td>18</td>
-                </tr>
-            </table>
-        </div>
+    <div class="tb-container">
+        <table class="tabela">
+            <tr>
+                <th>#</th>
+                <th>Ekipi</th>
+                <th>Ndeshjet</th>
+                <th>Fitoret</th>
+                <th>Humbjet</th>
+                <th>Kosh Diferenca</th>
+                <th>Piket</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Trepca</td>
+                <td>11</td>
+                <td>9</td>
+                <td>2</td>
+                <td>117</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Peja</td>
+                <td>11</td>
+                <td>9</td>
+                <td>2</td>
+                <td>117</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Golden Eagle Ylli</td>
+                <td>11</td>
+                <td>9</td>
+                <td>2</td>
+                <td>117</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Trepca</td>
+                <td>11</td>
+                <td>9</td>
+                <td>2</td>
+                <td>117</td>
+                <td>20</td>
+            </tr>
+        </table>
     </div>
-    <h1>Lajmet e fundit</h1>
-    <div class="main-container">
-        <div class="lajmi">
-            <img src="../Images/lajmi-3.png" alt="">
-            <div class="content">
-                <h3>Lajmi 1</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa itaque magni, neque qui placeat fuga
-                    ipsum, eveniet, explicabo quis necessitatibus a non delectus doloribus nesciunt ratione nisi.</p>
-            </div>
-        </div>
-        <div class="lajmi">
-            <img src="../Images/lajmi-2.png" alt="">
-            <div class="content">
-                <h3>Lajmi 2</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa itaque magni, neque qui placeat fuga
-                    ipsum, eveniet, explicabo quis necessitatibus a non delectus doloribus nesciunt ratione nisi.</p>
-            </div>
-        </div>
-        <div class="lajmi">
-            <img src="../Images/lajmi-1.jpeg" alt="">
-            <div class="content">
-                <h3>Lajmi 3</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa itaque magni, neque qui placeat fuga
-                    ipsum, eveniet, explicabo quis necessitatibus a non delectus doloribus nesciunt ratione nisi.</p>
-            </div>
-        </div>
-        <!-- <div class="lajmi"></div> -->
-    </div>
+    <div class="hapsira"></div>
     <footer class="footeri">
         <div class="footer-content">
             <h3>Adresa</h3>

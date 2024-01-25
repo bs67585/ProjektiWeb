@@ -30,7 +30,7 @@ body {
 
 .scrolled {
     background-color: white;
-    transition: 0.5s;
+    transition: 0.25s;
     /* border-bottom: 1px solid black; */
 }
 

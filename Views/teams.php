@@ -16,7 +16,7 @@
                 <li class="nav-opt"><a href="index.html">Home</a></li>
                 <li class="nav-opt"><a href="teams.html">Ekipet</a></li>
                 <li class="nav-opt"><a href="matches.html">Garat</a></li>
-                <li class="nav-opt"><a href="login.html">Profili</a></li>
+                <li class="nav-opt"><a href="login.php">Profili</a></li>
             </ul>
         </div>
         <div class="team-container">

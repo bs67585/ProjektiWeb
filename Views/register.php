@@ -30,7 +30,7 @@
         <div class="btn">
             <button onclick="validateForm()">Sign up</button>
         </div>
-        <a href="login.html">Log in</a>
+        <a href="login.php">Log in</a>
     </div>
 </body>
 <script>
