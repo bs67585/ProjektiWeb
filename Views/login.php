@@ -13,7 +13,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-function login_user($username, $password) {
+function login_user($username, $password)
+{
     global $conn;
 
     $query = "SELECT * FROM users WHERE user_username='$username'";
@@ -58,11 +59,10 @@ $conn->close();
 </head>
 
 <body>
-    <div class="container">
-        <div class="logo">
-            <img src="../Images/fbk-logo1.png" alt="Logo">
-        </div>
-        <form action="" method="post">
+    <form action="" method="post" class="container">
+            <div class="logo">
+                <img src="../Images/fbk-logo1.png" alt="Logo">
+            </div>
             <div class="input">
                 <p>Username</p>
                 <input type="text" id="user-login" name="username">
@@ -81,8 +81,7 @@ $conn->close();
                 <button onclick="validateForm()" type="submit" name="login">Log in</button>
             </div>
             <a href="register.php">Sign up</a>
-        </form>
-    </div>
+    </form>
 </body>
 <script>
 

@@ -1,49 +1,3 @@
-<?php
-
-session_start();
-
-$host = '127.0.0.1:3306';
-$username = 'root';
-$password = '';
-$database = 'liga_basketbolli';
-
-$conn = new mysqli($host, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
-function register_user($username, $name, $email, $password)
-{
-    global $conn;
-
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    $query = "INSERT INTO user (user_username,user_name, user_email, user_password) VALUES ('$username', '$name', '$email', '$hashed_password')";
-
-    if ($conn->query($query) === TRUE) {
-        echo "Registration successful!";
-    } else {
-        echo "Error: " . $query . "<br>" . $conn->error;
-    }
-}
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['register'])) {
-        $username = $_POST['username'];
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        register_user($username, $name, $email, $password);
-    }
-}
-
-$conn->close();
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,11 +10,10 @@ $conn->close();
 </head>
 
 <body>
-    <div class="container">
+    <form action="" method="post" class="container" name="register">
         <div class="logo">
             <img src="../Images/fbk-logo1.png" alt="Logo">
         </div>
-        <form action="" method="post">
             <div class="input">
                 <p>Full Name</p>
                 <input type="text" id="name-register" name="name">
@@ -84,7 +37,6 @@ $conn->close();
             </div>
             <a href="login.php">Log in</a>
         </form>
-    </div>
 </body>
 <script>
 
