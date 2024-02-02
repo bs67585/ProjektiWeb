@@ -15,7 +15,7 @@ if (isUserLoggedIn()) {
 
     $userRepository = new UserController();
     $user_Admin = $userRepository->getUserById($userId);
-    print_r($user_Admin);
+    // print_r($user_Admin);
 }else{
    $userId = null; 
 }

@@ -19,10 +19,10 @@ include_once "../Controllers/loginController.php";
             <div class="logo">
                 <img src="../Images/fbk-logo1.png" alt="Logo">
             </div>
-            <div class="input">
+            <!-- <div class="input">
                 <p>Username</p>
                 <input type="text" id="user-login" name="username">
-            </div>
+            </div> -->
             <div class="input">
                 <p>E-mail</p>
                 <input type="text" id="user-email" name="email">
