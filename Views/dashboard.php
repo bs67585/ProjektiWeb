@@ -15,7 +15,7 @@ if (isUserLoggedIn()) {
 
     $userRepository = new UserController();
     $user_Admin = $userRepository->getUserById($userId);
-    // print_r($user_Admin);
+    print_r($user_Admin);
 }else{
    $userId = null; 
 }
@@ -105,6 +105,7 @@ if (isUserLoggedIn()) {
     </footer>
 </body>
 </html>
+
 <?php
     if(isset($_POST['logout-profile-btn'])){
         session_unset();

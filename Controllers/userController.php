@@ -64,6 +64,7 @@ class UserController {
             if ($user==null) {
                 return null;
             } else {
+                // print_r($user); 
                 return $user;
             }
         } else {
