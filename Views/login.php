@@ -1,50 +1,6 @@
-<?php
+<?php 
 
-session_start();
-
-// $host = '127.0.0.1:3306';
-// $username = 'root';
-// $password = '';
-// $database = 'liga_basketbolli';
-
-// $conn = new mysqli($host, $username, $password, $database);
-
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }
-
-function login_user($username, $password)
-{
-    global $conn;
-
-    $query = "SELECT * FROM users WHERE user_username='$username'";
-    $result = $conn->query($query);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-
-        if (password_verify($password, $row['user_password'])) {
-            echo "Login successful!";
-            $_SESSION['username'] = $username;
-        } else {
-            echo "Incorrect password";
-        }
-    } else {
-        echo "User not found";
-    }
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['login'])) {
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        login_user($username, $password);
-    }
-}
-
-// $conn->close();
+include_once "../Controllers/loginController.php";
 
 ?>
 
@@ -59,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <form action="" method="post" class="container">
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="container">
             <div class="logo">
                 <img src="../Images/fbk-logo1.png" alt="Logo">
             </div>

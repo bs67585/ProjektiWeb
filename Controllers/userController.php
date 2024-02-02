@@ -74,11 +74,11 @@ class UserController {
     function updateUser($id, $email, $name, $username, $password, $role, $active) {
          $conn = $this->connection;
 
-         $sql = "UPDATE user SET email=?, username=?, name=?, password=?, role=?, active=? WHERE id=?";
+         $sql = "UPDATE user SET name=?, username=?, email=?, password=?, role=?, active=? WHERE id=?";
 
          $statement = $conn->prepare($sql);
 
-         $statement->execute([$email, $username, $name, $password, $role, $active, $id]);
+         $statement->execute([$name, $username, $email, $password, $role, $active, $id]);
     } 
 
     function deleteUser($id) {

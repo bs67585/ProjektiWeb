@@ -16,10 +16,10 @@ if(isset($_POST['save-profile-btn'])){
         $userRepository = new UserController();
 
         if($role==='admin'){
-            $userRepository->updateUser($user_id,$email,$username,$password,$role,$user_Admin['active']);
-            header("location:/Projekt-UBT---Sem.-3/views/accountAdmin.php?id=$user_id");
+            $userRepository->updateUser($user_id, $name, $username, $email, $password, $role, $user_Admin['active']);
+            header("location:/ProjektiWeb/Views/dashboard.php?id=$user_id");
         }else if($role==='role'){
-            $userRepository->updateUser($user_id,$email,$username,$password,$role,$user['active']);
+            $userRepository->updateUser($user_id,$name, $email, $username, $password, $role, $user['active']);
             header("location:/Projekt-UBT---Sem.-3/views/account.php?id=$user_id");
         }
     }

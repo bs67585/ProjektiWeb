@@ -3,6 +3,9 @@
     padding: 0px;
     font-family: sans-serif;
 }
+body {
+    margin-top: 65px;
+}
 .sidebar {
     background-color: rgba(255, 68, 0, 0.884);
     width: 20%;
