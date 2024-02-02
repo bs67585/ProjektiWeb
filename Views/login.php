@@ -2,16 +2,16 @@
 
 session_start();
 
-$host = '127.0.0.1:3306';
-$username = 'root';
-$password = '';
-$database = 'liga_basketbolli';
+// $host = '127.0.0.1:3306';
+// $username = 'root';
+// $password = '';
+// $database = 'liga_basketbolli';
 
-$conn = new mysqli($host, $username, $password, $database);
+// $conn = new mysqli($host, $username, $password, $database);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
 
 function login_user($username, $password) {
     global $conn;
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$conn->close();
+// $conn->close();
 
 ?>
 
