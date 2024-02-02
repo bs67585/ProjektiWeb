@@ -1,3 +1,26 @@
+<?php
+session_start();
+
+function isUserLoggedIn() {
+    return isset($_SESSION['id']);
+}
+
+if (isUserLoggedIn()) {
+    $userId = $_SESSION['id'];
+
+    include_once '../Controllers/userController.php';
+    include_once '../Controllers/user.php';
+    // include_once '../controller/updateController.php';
+    include_once '../controller/logoutController.php';
+
+    $userRepository = new UserController();
+    $user_Admin = $userRepository->getUserById($userId);
+}else{
+   $userId = null; 
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,3 +54,8 @@
     </div>
 </body>
 </html>
+<?php
+    if(isset($_POST['logout-profile-btn'])){
+        session_unset();
+    }
+?>

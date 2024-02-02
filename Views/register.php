@@ -2,16 +2,16 @@
 
 session_start();
 
-// $host = '127.0.0.1:3306';
-// $username = 'root';
-// $password = '';
-// $database = 'liga_basketbolli';
+$host = '127.0.0.1:3306';
+$username = 'root';
+$password = '';
+$database = 'liga_basketbolli';
 
-// $conn = new mysqli($host, $username, $password, $database);
+$conn = new mysqli($host, $username, $password, $database);
 
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 
 function register_user($username, $name, $email, $password)
@@ -56,11 +56,10 @@ $conn->close();
 </head>
 
 <body>
-    <div class="container">
+    <form action="" method="post" class="container" name="register">
         <div class="logo">
             <img src="../Images/fbk-logo1.png" alt="Logo">
         </div>
-        <form action="" method="post">
             <div class="input">
                 <p>Full Name</p>
                 <input type="text" id="name-register" name="name">
@@ -84,7 +83,6 @@ $conn->close();
             </div>
             <a href="login.php">Log in</a>
         </form>
-    </div>
 </body>
 <script>
 
