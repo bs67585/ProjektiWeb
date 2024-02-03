@@ -17,13 +17,12 @@ class UserController {
 
         $id = $user->getId();
         $email = $user->getEmail();
-        $name = $user->getName();
         $username = $user->getUsername();
         $password = $user->getPassword();
 
-        $sql = "INSERT INTO user (id, name, username, email, password) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO user (id, username, email, password) VALUES (?, ?, ?, ?)";
         $statement = $conn->prepare($sql);
-        $statement->execute([$id, $username, $name, $email, $password]);
+        $statement->execute([$id, $username, $email, $password]);
 
         $userId = $conn->lastInsertId();
      
@@ -72,14 +71,14 @@ class UserController {
         }
     }
 
-    function updateUser($id, $email, $name, $username, $password, $role, $active) {
+    function updateUser($id, $username, $email,  $password, $role, $active) {
          $conn = $this->connection;
 
-         $sql = "UPDATE user SET name=?, username=?, email=?, password=?, role=?, active=? WHERE id=?";
+         $sql = "UPDATE user SET username=?, email=?, password=?, role=?, active=? WHERE id=?";
 
          $statement = $conn->prepare($sql);
 
-         $statement->execute([$name, $username, $email, $password, $role, $active, $id]);
+         $statement->execute([$username, $email, $password, $role, $active, $id]);
     } 
 
     function deleteUser($id) {

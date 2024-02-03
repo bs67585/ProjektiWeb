@@ -20,10 +20,6 @@ include_once "../Controllers/registerController.php"
             <img src="../Images/fbk-logo1.png" alt="Logo">
         </div>
             <div class="input">
-                <p>Full Name</p>
-                <input type="text" id="name-register" name="name">
-            </div>
-            <div class="input">
                 <p>Username</p>
                 <input type="text" id="user-register" name="username">
             </div>
@@ -38,7 +34,7 @@ include_once "../Controllers/registerController.php"
             </div>
             <div id="register-pass-error" style="color: red;"></div>
             <div class="btn">
-                <button onclick="validateForm()" type="submit" name="login">Sign up</button>
+                <button onclick="validateForm()" type="submit" name="registerBtn">Sign up</button>
             </div>
             <a href="login.php">Log in</a>
         </form>

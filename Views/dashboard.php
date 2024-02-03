@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-function isUserLoggedIn() {
+function isUserLoggedIn()
+{
     return isset($_SESSION['id']);
 }
 
@@ -15,9 +16,8 @@ if (isUserLoggedIn()) {
 
     $userRepository = new UserController();
     $user_Admin = $userRepository->getUserById($userId);
-    print_r($user_Admin);
-}else{
-   $userId = null; 
+} else {
+    $userId = null;
 }
 
 
@@ -25,6 +25,7 @@ if (isUserLoggedIn()) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +33,7 @@ if (isUserLoggedIn()) {
     <link rel="stylesheet" href="../Styles/main.css">
     <title>Dashboard</title>
 </head>
+
 <body>
     <header>
         <div class="navbar" id="nav">
@@ -46,13 +48,68 @@ if (isUserLoggedIn()) {
     </header>
 
     <div class="container">
-        <div class="main">
-            <div class="profile">
-                <p>Name: <input type="text" value="<?=$user_Admin['name']?>" readonly></p>
-                <p>Username: <input type="text" value="<?=$user_Admin['username']?>" readonly></p>
-                <p>Email: <input type="text" value="<?=$user_Admin['email']?>" readonly></p>
+        <div >
+            <form class="profile" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+                <p>Username: <input type="text" value="<?= $user_Admin['username'] ?>" readonly></p>
+                <p>Email: <input type="text" value="<?= $user_Admin['email'] ?>" readonly></p>
+                <p>Password: <input type="text" value="<?= $user_Admin['password'] ?>" readonly></p>
+                <button name="logout-btn">Log Out</button>
+            </form>
+        </div>
+        <div class="edit">
+            <div class="teams">
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Ekipi</th>
+                        <th>Ndeshjet</th>
+                        <th>Fitoret</th>
+                        <th>Humbjet</th>
+                        <th>Kosh Diferenca</th>
+                        <th>Piket</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Trepca</td>
+                        <td>11</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>117</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Peja</td>
+                        <td>11</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>117</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Golden Eagle Ylli</td>
+                        <td>11</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>117</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Trepca</td>
+                        <td>11</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>117</td>
+                        <td>20</td>
+                    </tr>
+                </table>
             </div>
         </div>
+    </div>
+
+    <div>
     </div>
 
     <footer class="footeri">
@@ -104,10 +161,11 @@ if (isUserLoggedIn()) {
         </div>
     </footer>
 </body>
+
 </html>
 
 <?php
-    if(isset($_POST['logout-profile-btn'])){
-        session_unset();
-    }
+if (isset($_POST['logout-profile-btn'])) {
+    session_unset();
+}
 ?>

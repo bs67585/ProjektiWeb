@@ -18,19 +18,19 @@ if(isset($_POST['login'])){
         $user  = $userRepository->getUserByEmailAndPassword($email,$password);
 
         if($user==null){
-            echo "<script>alert('Invalid Credentials!'); </script>";
+            echo "Invalid Credentials!";
         }elseif($user['role'] === 'admin'){
             $_SESSION["id"] = $user['id'];
             $_SESSION["active"] = 1;
             $_SESSION["role"] = $user['role'];
-            $userRepository->updateUser($user['id'],$name, $user['username'], $email, $password, $user['role'], $_SESSION["active"]);
+            $userRepository->updateUser($user['id'], $user['username'], $email, $password, $user['role'], $_SESSION["active"]);
             header("location:/ProjektiWeb/Views/dashboard.php?id=$user[id]");
         }
         else{
             $_SESSION["id"] = $user['id'];
             $_SESSION["active"] = 1;
             $_SESSION["role"] = $user['role'];
-            $userRepository->updateUser($user['id'],$email,$user['username'],$password,$name,$user['role'],$_SESSION["active"]);
+            $userRepository->updateUser($user['id'],$email,$user['username'],$password,$user['role'],$_SESSION["active"]);
             header("location:/Projekt-UBT---Sem.-3/views/account.php?id=$user[id]");
         }
     }

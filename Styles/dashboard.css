@@ -6,37 +6,50 @@
 body {
     margin-top: 65px;
 }
-.sidebar {
-    background-color: rgba(255, 68, 0, 0.884);
-    width: 20%;
-    height: 100vh;
-}
-.sidebar ul {
-    list-style: none;
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
-}
-.sidebar li {
-    padding: 12px;
-}
-
-.sidebar a {
-    color: white;
-    text-decoration: none;
-    text-align: center;
-}
-.container {
-    display: flex;
-    flex-direction: row;
+    height: 100vh;
+    width: 100%;
 }
 .main {
-    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .profile {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 15px;
+}
+.profile input {
+    border: none;
+    border-bottom: 1px solid;
+    font-size: medium;
+    text-align: center;
+}
+.profile p {
+    font-weight: bolder;
+    margin: 4% 0px 4% 0px;
+}
+.teams {
+    border-collapse: collapse;
+}
+
+.teams th {
+    background-color: orangered;
+    padding: 15px;
+    color: white;
+    border: 1px solid lightgray;
+    width: fit-content;
+    text-wrap: nowrap;
+}
+
+.teams td {
+    padding: 15px;
+    border: 1px solid lightgray;
+    width: fit-content;
+    text-wrap: nowrap;
 }
