@@ -30,6 +30,13 @@ body {
     font-size: medium;
     text-align: center;
 }
+.profile button {
+    background-color: white;
+    border: 1px solid orangered;
+    border-radius: 10%;
+    padding: 2%;
+}
+
 .profile p {
     font-weight: bolder;
     margin: 4% 0px 4% 0px;
@@ -63,7 +70,7 @@ table {
 }
 .teams-tb th {
     background-color: orangered;
-    padding: 10px;
+    padding: 7px;
     color: white;
     border: 1px solid lightgray;
     width: fit-content;
@@ -75,4 +82,26 @@ table {
     border: 1px solid lightgray;
     width: fit-content;
     text-wrap: nowrap;
+}
+.add-btn {
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 10%;
+    padding: 1%;
+    display: flex;
+    align-self: flex-end;
+    margin-top: 1%;
+    /* margin-right: 5%; */
+}
+.add-btn a {
+    text-decoration: none;
+    color: blue;
+}
+
+@media screen and (max-width: 768px) {
+    .edit {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
 }

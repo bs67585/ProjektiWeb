@@ -1,6 +1,6 @@
 <?php
 
-class User{
+class Team{
     private $id;
     private $name;
     private $ndeshjet;

@@ -135,19 +135,24 @@ h1 {
     text-align: center;
     border-radius: 3%;
 }
+
 .lajmi img {
     border-radius: 3% 0% 0% 3%;
 }
+
 .content {
     display: flex;
+    width: 40%;
     flex-direction: column;
     justify-content: center;
     padding: 10px;
 }
+
 .content p {
     margin-top: 30%;
     font-size: small;
 }
+
 .hapsira {
     height: 700px;
 }
@@ -243,13 +248,16 @@ h1 {
     height: 300px;
 
 }
+
 .footer-content {
-font-size: large;
+    font-size: large;
 
 }
+
 .footer-content p {
     padding: 10px;
 }
+
 .footer-content h3 {
     padding: 10px;
     text-align: center;
@@ -261,4 +269,134 @@ font-size: large;
     width: 25px;
     height: 25px;
     padding: 8%;
+}
+
+.addTeam {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.addTeam p {
+    margin: 1%;
+    font-weight: bolder;
+}
+
+.addTeam button {
+    background-color: white;
+    border: 1px solid orangered;
+    border-radius: 10%;
+    padding: 1%;
+}
+
+.addTeam input {
+    border: none;
+    border-bottom: 1px solid;
+    font-size: medium;
+    text-align: center;
+}
+
+.addTeam input:focus {
+    outline: none;
+}
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    * {
+        overflow-x: hidden;
+    }
+    .team-container {
+        display: flex;
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+    }
+    .footeri {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;   
+    }
+    .ekipet {
+        width: 100%;
+    }
+    .img-btn {
+        top: 50%;
+    }
+    .right {
+        right: 5%;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+    }
+
+    .nav-opt {
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .nav-opt a {
+        display: block;
+        padding: 10px;
+        color: orangered;
+    }
+
+    .navbar {
+        flex-direction: column;
+        /* position: relative; */
+    }
+
+    .menu-icon {
+        font-size: 24px;
+        cursor: pointer;
+        display: block;
+    }
+    .top-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 200px;
+    }
+    .tabela-home {
+        margin-top: 5%;
+    }
+    .tabela-home th{
+        padding: 5px;
+    }
+    .tabela-home td{
+        padding: 5px;
+    }
+    .main-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .slider {
+        height: auto;
+        margin-left: 6%;
+    }
+
+    .tabela th {
+        padding: 1px;
+        text-wrap: wrap;
+    }
+    .tabela td {
+        padding: 1px;
+        text-wrap: wrap;
+    }
+    .hapsira {
+        height: 500px;
+    }
+    .team-container {
+        margin-top: 150px;
+    }
 }

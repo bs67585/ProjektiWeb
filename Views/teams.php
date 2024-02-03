@@ -12,6 +12,7 @@
     <header>
         <div class="navbar" id="nav">
             <div class="logo">LOGO</div>
+            <div class="menu-icon">&#9776;</div>
             <ul class="nav-menu">
                 <li class="nav-opt"><a href="index.php">Home</a></li>
                 <li class="nav-opt"><a href="teams.php">Ekipet</a></li>
@@ -23,91 +24,97 @@
             <div class="ekipet">
                 <h2>Lideret ne Ndeshje</h2>
                 <br>
-                <div class="ekipi">
-                    <img src="../Images/fbk-logo1.png" alt="">
-                    <div class="ekipet-info">
-                        <h3>Trepca</h3>
-                    </div>
-                </div>
-                <div class="ekipi">
-                    <img src="../Images/fbk-logo1.png" alt="">
-                    <div class="ekipet-info">
-                        <h3>Peja</h3>
-                    </div>
-                </div>
-                <div class="ekipi">
-                    <img src="../Images/fbk-logo1.png" alt="">
-                    <div class="ekipet-info">
-                        <h3>Golden Eagle Ylli</h3>
-                    </div>
-                </div>
+                <?php
+
+                include_once "../Controllers/teamController.php";
+
+                $teamRepository = new TeamController();
+
+                $teams = $teamRepository->getAllTeams();
+                usort($teams, function ($a, $b) {
+                    return $b['ndeshjet'] - $a['ndeshjet'];
+                });
+
+                foreach ($teams as $team) {
+                    echo "
+                        <div class='ekipi'>
+                        <img src='../Images/fbk-logo1.png'>  
+                        <h3>$team[name] </h3>
+                        </div>";
+                }
+
+                ?>
             </div>
             <div class="ekipet">
                 <h2>Lideret ne Pike</h2>
                 <br>
-                <div class="ekipi">
-                    <img src="../Images/fbk-logo1.png" alt="">
-                    <div class="ekipet-info">
-                        <h3>Peja</h3>
-                    </div>
-                </div>
-                <div class="ekipi">
-                    <img src="../Images/fbk-logo1.png" alt="">
-                    <div class="ekipet-info">
-                        <h3>Trepca</h3>
-                    </div>
-                </div>
-                <div class="ekipi">
-                    <img src="../Images/fbk-logo1.png" alt="">
-                    <div class="ekipet-info">
-                        <h3>Sigal Prishtina</h3>
-                    </div>
-                </div>
+                <?php
+
+                include_once "../Controllers/teamController.php";
+
+                $teamRepository = new TeamController();
+
+                $teams = $teamRepository->getAllTeams();
+                usort($teams, function ($a, $b) {
+                    return $b['piket'] - $a['piket'];
+                });
+
+                foreach ($teams as $team) {
+                    echo "
+                        <div class='ekipi'>
+                        <img src='../Images/fbk-logo1.png'>  
+                        <h3>$team[name] </h3>
+                        </div>";
+                }
+
+                ?>
             </div>
             <div class="ekipet">
                 <h2>Lideret ne Piket e Pranuara</h2>
                 <br>
-                <div class="ekipi">
-                    <img src="../Images/fbk-logo1.png" alt="">
-                    <div class="ekipet-info">
-                        <h3>Trepca</h3>
-                    </div>
-                </div>
-                <div class="ekipi">
-                    <img src="../Images/fbk-logo1.png" alt="">
-                    <div class="ekipet-info">
-                        <h3>Sigal Prishtina</h3>
-                    </div>
-                </div>
-                <div class="ekipi">
-                    <img src="../Images/fbk-logo1.png" alt="">
-                    <div class="ekipet-info">
-                        <h3>Golden Eagle Ylli</h3>
-                    </div>
-                </div>
+                <?php
+
+                include_once "../Controllers/teamController.php";
+
+                $teamRepository = new TeamController();
+
+                $teams = $teamRepository->getAllTeams();
+                usort($teams, function ($a, $b) {
+                    return $b['diferenca'] - $a['diferenca'];
+                });
+
+                foreach ($teams as $team) {
+                    echo "
+                        <div class='ekipi'>
+                        <img src='../Images/fbk-logo1.png'>  
+                        <h3>$team[name] </h3>
+                        </div>";
+                }
+
+                ?>
             </div>
             <div class="ekipet">
                 <h2>Lideret ne 3 Pikesh</h2>
                 <br>
-                <div class="ekipi">
-                    <img src="../Images/fbk-logo1.png" alt="">
-                    <div class="ekipet-info">
-                        <h3>Trepca</h3>
-                    </div>
-                </div>
-                <div class="ekipi">
-                    <img src="../Images/fbk-logo1.png" alt="">
-                    <div class="ekipet-info">
-                        <h3>Sigal Prishtina</h3>
-                    </div>
-                </div>
-                <div class="ekipi">
-                    <img src="../Images/fbk-logo1.png" alt="">
-                    <div class="ekipet-info">
-                        <h3>Golden Eagle Ylli</h3>
-                    </div>
-                </div>
+                <?php
+
+                include_once "../Controllers/teamController.php";
+
+                $teamRepository = new TeamController();
+
+                $teams = $teamRepository->getAllTeams();
+
+                foreach ($teams as $team) {
+                    echo "
+                        <div class='ekipi'>
+                        <img src='../Images/fbk-logo1.png'>  
+                        <h3>$team[name] </h3>
+                        </div>";
+                }
+
+                ?>
             </div>
+        </div>
         </div>
         <!-- <div class="hapsira"></div> -->
         <footer class="footeri">

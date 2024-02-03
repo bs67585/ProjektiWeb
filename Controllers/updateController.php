@@ -20,7 +20,7 @@ if(isset($_POST['save-btn'])){
             header("location:/ProjektiWeb/Views/dashboard.php?id=$user_id");
         }else if($role==='role'){
             $userRepository->updateUser($user_id, $username, $email, $password, $role, $user['active']);
-            header("location:/Projekt-UBT---Sem.-3/views/account.php?id=$user_id");
+            header("location:/ProjektiWeb/Views/index.php?id=$user_id");
         }
     }
 }

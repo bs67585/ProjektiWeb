@@ -2,7 +2,7 @@
 
 include_once '../Database/DBConfig.php';
 
-class teamController {
+class TeamController {
     private $connection;
 
     function __construct() {
@@ -45,34 +45,13 @@ class teamController {
     function getTeamById($id) {
         $conn = $this->connection;
 
-        $sql = "SELECT * FROM team WHERE id='$id'";
+        $sql = "SELECT * FROM ekipi WHERE id='$id'";
 
         $statement = $conn->query($sql);
         $team = $statement->fetch(PDO::FETCH_ASSOC);
 
         return $team;
     }
-
-    // function getUserByEmailAndPassword($email, $password) {
-    //     $conn = $this->connection;
-
-    //     $sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
-
-    //     $statement = $conn->query($sql);
-        
-    //     if ($statement->execute()) {
-    //         $user = $statement->fetch(PDO::FETCH_ASSOC);
-    
-    //         if ($user==null) {
-    //             return null;
-    //         } else {
-    //             // print_r($user); 
-    //             return $user;
-    //         }
-    //     } else {
-    //         return null;
-    //     }
-    // }
 
     function updateTeam($id, $name, $ndeshjet,  $fitoret, $humbjet, $diferenca, $piket) {
          $conn = $this->connection;

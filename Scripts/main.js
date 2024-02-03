@@ -14,6 +14,23 @@ window.addEventListener('scroll', function () {
 
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const menuIcon = document.querySelector('.menu-icon');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuIcon.addEventListener('click', function () {
+        navMenu.style.display = (navMenu.style.display === 'flex' || navMenu.style.display === '') ? 'none' : 'flex';
+    });
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 768) {
+            navMenu.style.display = 'flex';
+        } else {
+            navMenu.style.display = 'none';
+        }
+    });
+});
+
 //Slider
 i = 0;
 let imgArray = ['../Images/slider-image.jpg', '../Images/slider-image-2.jpg', '../Images/slider-image-3.jpg'];

@@ -12,6 +12,7 @@
     <header>
         <div class="navbar" id="nav">
             <div class="logo">LOGO</div>
+            <div class="menu-icon">&#9776;</div>
             <ul class="nav-menu">
                 <li class="nav-opt"><a href="index.php">Home</a></li>
                 <li class="nav-opt"><a href="teams.php">Ekipet</a></li>
@@ -59,34 +60,28 @@
                     <th>Humbjet</th>
                     <th>Piket</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Trepca</td>
-                    <td>9</td>
-                    <td>2</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Peja</td>
-                    <td>8</td>
-                    <td>3</td>
-                    <td>19</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Golden Eagle Ylli</td>
-                    <td>7</td>
-                    <td>4</td>
-                    <td>18</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Sigal Prishtina</td>
-                    <td>7</td>
-                    <td>4</td>
-                    <td>18</td>
-                </tr>
+                <?php
+
+                include_once "../Controllers/teamController.php";
+
+                $teamRepository = new TeamController();
+
+                $teams = $teamRepository->getAllTeams();
+
+                foreach ($teams as $team) {
+                    echo
+                        "
+                        <tr>
+                            <td>$team[id]</td>
+                            <td>$team[name] </td>
+                            <td>$team[fitoret]</td>
+                            <td>$team[humbjet]</td>
+                            <td>$team[piket]</td>
+                        </tr>
+                        ";
+                }
+
+                ?>
             </table>
         </div>
     </div>

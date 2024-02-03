@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Styles/main.css">
-    <title>Ekipet</title>
+    <title>Garat</title>
 </head>
 
 <body>
     <header>
         <div class="navbar" id="nav">
             <div class="logo">LOGO</div>
+            <div class="menu-icon">&#9776;</div>
             <ul class="nav-menu">
                 <li class="nav-opt"><a href="index.php">Home</a></li>
                 <li class="nav-opt"><a href="teams.php">Ekipet</a></li>
@@ -31,42 +32,30 @@
                 <th>Kosh Diferenca</th>
                 <th>Piket</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Trepca</td>
-                <td>11</td>
-                <td>9</td>
-                <td>2</td>
-                <td>117</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Peja</td>
-                <td>11</td>
-                <td>9</td>
-                <td>2</td>
-                <td>117</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Golden Eagle Ylli</td>
-                <td>11</td>
-                <td>9</td>
-                <td>2</td>
-                <td>117</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Trepca</td>
-                <td>11</td>
-                <td>9</td>
-                <td>2</td>
-                <td>117</td>
-                <td>20</td>
-            </tr>
+            <?php
+
+                    include_once "../Controllers/teamController.php";
+
+                    $teamRepository = new TeamController();
+
+                    $teams = $teamRepository->getAllTeams();
+
+                    foreach ($teams as $team) {
+                        echo
+                            "
+                        <tr>
+                            <td>$team[id]</td>
+                            <td>$team[name] </td>
+                            <td>$team[ndeshjet]</td>
+                            <td>$team[fitoret]</td>
+                            <td>$team[humbjet]</td>
+                            <td>$team[diferenca]</td>
+                            <td>$team[piket]</td>
+                        </tr>
+                        ";
+                    }
+
+                    ?>
         </table>
     </div>
     <div class="hapsira"></div>
