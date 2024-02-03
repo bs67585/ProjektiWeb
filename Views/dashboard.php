@@ -58,7 +58,8 @@ if (isUserLoggedIn()) {
         </div>
         <div class="edit">
             <div class="teams">
-                <table>
+                <h2>Teams</h2>
+                <table class="teams-tb">
                     <tr>
                         <th>#</th>
                         <th>Ekipi</th>
@@ -104,6 +105,42 @@ if (isUserLoggedIn()) {
                         <td>117</td>
                         <td>20</td>
                     </tr>
+                </table>
+            </div>
+            <div class="users">
+                <h2>Users</h2>
+                <table class="teams-tb">
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Role</th>
+                        <th></th>
+                    </tr>
+                    <?php
+                    
+                    include_once "../Controllers/userController.php";
+
+                    $userRepository = new UserController();
+
+                    $users = $userRepository->getAllUsers();
+
+                    foreach($users as $user){
+                        echo 
+                        "
+                        <tr>
+                            <td>$user[id]</td>
+                            <td>$user[username] </td>
+                            <td>$user[email] </td>
+                            <td>$user[password] </td>
+                            <td>$user[role] </td>
+                            <td><a onclick='deleteUser($user[id])'>Delete</a></td>
+                        </tr>
+                        ";
+                    }
+
+                    ?>
                 </table>
             </div>
         </div>
@@ -162,10 +199,30 @@ if (isUserLoggedIn()) {
     </footer>
 </body>
 
+<script>
+    function deleteUser(userId){
+
+                var confirmDelete = confirm("Are you sure you want to delete this user?");
+                if (confirmDelete) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "/ProjektiWeb/Controllers/deleteController.php", true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+
+                            console.warn(xhr.responseText);
+
+                            location.reload();
+                        }
+                    };
+                    xhr.send("id=" + userId);
+                }
+        }
+</script>
 </html>
 
 <?php
-if (isset($_POST['logout-profile-btn'])) {
+if (isset($_POST['logout-btn'])) {
     session_unset();
 }
 ?>
