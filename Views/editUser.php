@@ -17,7 +17,7 @@ $user = $userRepository->getUserById($userId);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Team</title>
+    <title>Edit User</title>
     <link rel="stylesheet" href="../Styles/main.css">
 </head>
 
@@ -36,6 +36,7 @@ $user = $userRepository->getUserById($userId);
     </header>
 
     <form class="addTeam" action="/ProjektiWeb/Controllers/editUserController.php" method="post">
+        <input type="hidden" name="id" value="<?=$user['id']?>">
         <p>Username: <input type="text" name="username" value="<?=$user['username']?>"></p>
         <p>Email: <input type="email" name="email" value="<?=$user['email']?>"></p>
         <p>Password: <input type="text" name="password" value="<?=$user['password']?>"></p>

@@ -29,6 +29,7 @@
                 include_once "../Controllers/teamController.php";
 
                 $teamRepository = new TeamController();
+                $count = 0;
 
                 $teams = $teamRepository->getAllTeams();
                 usort($teams, function ($a, $b) {
@@ -36,11 +37,16 @@
                 });
 
                 foreach ($teams as $team) {
+                    if($counr < 3) {
                     echo "
                         <div class='ekipi'>
                         <img src='../Images/fbk-logo1.png'>  
                         <h3>$team[name] </h3>
                         </div>";
+                        $count++;
+                    } else {
+                        break;
+                    }
                 }
 
                 ?>
@@ -53,6 +59,7 @@
                 include_once "../Controllers/teamController.php";
 
                 $teamRepository = new TeamController();
+                $count = 0;
 
                 $teams = $teamRepository->getAllTeams();
                 usort($teams, function ($a, $b) {
@@ -60,11 +67,16 @@
                 });
 
                 foreach ($teams as $team) {
+                    if ($count < 3) {
                     echo "
                         <div class='ekipi'>
                         <img src='../Images/fbk-logo1.png'>  
                         <h3>$team[name] </h3>
                         </div>";
+                        $count++;
+                    } else {
+                        break;
+                    }
                 }
 
                 ?>
@@ -77,6 +89,7 @@
                 include_once "../Controllers/teamController.php";
 
                 $teamRepository = new TeamController();
+                $count = 0;
 
                 $teams = $teamRepository->getAllTeams();
                 usort($teams, function ($a, $b) {
@@ -84,11 +97,16 @@
                 });
 
                 foreach ($teams as $team) {
+                    if ($count < 3) {
                     echo "
                         <div class='ekipi'>
                         <img src='../Images/fbk-logo1.png'>  
                         <h3>$team[name] </h3>
                         </div>";
+                        $count++;
+                    } else {
+                        break;
+                    }
                 }
 
                 ?>
@@ -103,13 +121,19 @@
                 $teamRepository = new TeamController();
 
                 $teams = $teamRepository->getAllTeams();
+                $count = 0;
 
                 foreach ($teams as $team) {
+                    if ($count < 3) {
                     echo "
                         <div class='ekipi'>
                         <img src='../Images/fbk-logo1.png'>  
                         <h3>$team[name] </h3>
                         </div>";
+                    $count++;
+                    } else {
+                        break;
+                    }
                 }
 
                 ?>

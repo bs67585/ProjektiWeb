@@ -3,10 +3,10 @@ include_once '../Controllers/userController.php';
 include_once '../Models/user.php';
 
 if(isset($_POST['logout-btn'])){
-    $email = $_POST['email'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
     $id = $_POST['id'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
     $role = $_POST['role'];
     $active = 0;
 

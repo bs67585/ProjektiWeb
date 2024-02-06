@@ -4,9 +4,9 @@ session_start();
 include_once '../Controllers/teamController.php';
 include_once '../Models/teams.php';
 
-$id = $_SESSION['edit_id'];
 
 if(isset($_POST['edit-team'])){
+    $id = $_POST['id'];
     $name = $_POST['name'];
     $ndeshjet = $_POST['ndeshjet'];
     $fitoret = $_POST['fitoret'];
@@ -14,13 +14,14 @@ if(isset($_POST['edit-team'])){
     $diferenca = $_POST['diferenca'];
     $piket = $_POST['piket'];
 
-    $teamRepository = new teamController();
+    $teamRepository = new TeamController();
 
     $teamRepository->updateTeam($id, $name, $ndeshjet, $fitoret, $humbjet, $diferenca, $piket);
 
-    $team_id = $_SESSION['id'];
+    $admin_id = $_SESSION['id'];
 
-    header("location:/ProjektiWeb/Views/dashboard.php?id=$team_id");
+    // header("location:/ProjektiWeb/Views/dashboard.php?id=$admin_id");
+    print_r($id);
 }
 
 ?>

@@ -11,7 +11,6 @@ if (isUserLoggedIn()) {
 
     include_once '../Controllers/userController.php';
     include_once '../Models/user.php';
-    include_once '../Controllers/updateController.php';
     include_once '../Controllers/logoutController.php';
 
     $userRepository = new UserController();
@@ -51,6 +50,7 @@ if (isUserLoggedIn()) {
     <div class="container">
         <div>
             <form class="profile" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+                <input type="hidden" value="<?= $user_Admin['id'] ?>">
                 <p>Username: <input type="text" value="<?= $user_Admin['username'] ?>" readonly></p>
                 <p>Email: <input type="text" value="<?= $user_Admin['email'] ?>" readonly></p>
                 <p>Password: <input type="text" value="<?= $user_Admin['password'] ?>" readonly></p>

@@ -4,9 +4,9 @@ session_start();
 include_once '../Controllers/userController.php';
 include_once '../Models/user.php';
 
-$id = $_SESSION['edit_id'];
 
 if(isset($_POST['edit-user'])){
+    $id = $_POST['id'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
