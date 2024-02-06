@@ -14,7 +14,7 @@ if (isUserLoggedIn()) {
     include_once '../Controllers/logoutController.php';
 
     $userRepository = new UserController();
-    $user_Admin = $userRepository->getUserById($userId);
+    $user_simple = $userRepository->getUserById($userId);
 } else {
     $userId = null;
 }
@@ -30,7 +30,7 @@ if (isUserLoggedIn()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Styles/dashboard.css">
     <link rel="stylesheet" href="../Styles/main.css">
-    <title>Dashboard</title>
+    <title>Profile</title>
 </head>
 
 <body>
@@ -50,97 +50,14 @@ if (isUserLoggedIn()) {
     <div class="container">
         <div>
             <form class="profile" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-                <input type="hidden" name="id" value="<?= $user_Admin['id'] ?>">
-                <p>Username: <input type="text" name="username" value="<?= $user_Admin['username'] ?>" readonly></p>
-                <p>Email: <input type="text" name="email" value="<?= $user_Admin['email'] ?>" readonly></p>
-                <p>Password: <input type="text" name="password" value="<?= $user_Admin['password'] ?>" readonly></p>
-                <input type="hidden" name="role" value="<?= $user_Admin['role'] ?>">
-                <input type="hidden" name="active" value="<?= $user_Admin['active'] ?>">
+                <input type="hidden" name="id" value="<?= $user_simple['id'] ?>">
+                <p>Username: <input type="text" name="username" value="<?= $user_simple['username'] ?>" readonly></p>
+                <p>Email: <input type="text" name="email" value="<?= $user_simple['email'] ?>" readonly></p>
+                <p>Password: <input type="text" name="password" value="<?= $user_simple['password'] ?>" readonly></p>
+                <input type="hidden" name="role" value="<?= $user_simple['role'] ?>" readonly>
+                <input type="hidden" name="active" value="<?= $user_simple['active'] ?>" readonly>
                 <button name="logout-btn" type="submit">Log Out</button>
             </form>
-        </div>
-        <div class="edit">
-            <div class="teams">
-                <h2>Teams</h2>
-                <table class="teams-tb">
-                    <tr>
-                        <th>#</th>
-                        <th>Ekipi</th>
-                        <th>Ndeshjet</th>
-                        <th>Fitoret</th>
-                        <th>Humbjet</th>
-                        <th>Kosh Diferenca</th>
-                        <th>Piket</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <?php
-
-                    include_once "../Controllers/teamController.php";
-
-                    $teamRepository = new TeamController();
-
-                    $teams = $teamRepository->getAllTeams();
-
-                    foreach ($teams as $team) {
-                        echo
-                            "
-                        <tr>
-                            <td>$team[id]</td>
-                            <td>$team[name] </td>
-                            <td>$team[ndeshjet]</td>
-                            <td>$team[fitoret]</td>
-                            <td>$team[humbjet]</td>
-                            <td>$team[diferenca]</td>
-                            <td>$team[piket]</td>
-                            <td><a href='editTeam.php?id=$team[id]'>Edit</a> </td>
-                            <td><a onclick='deleteTeam($team[id])'>Delete</a></td>
-                        </tr>
-                        ";
-                    }
-
-                    ?>
-                </table>
-                <button class="add-btn"><a href="add.php">Add</a></button>
-            </div>
-            <div class="users">
-                <h2>Users</h2>
-                <table class="teams-tb">
-                    <tr>
-                        <th>ID</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Role</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <?php
-
-                    include_once "../Controllers/userController.php";
-
-                    $userRepository = new UserController();
-
-                    $users = $userRepository->getAllUsers();
-
-                    foreach ($users as $user) {
-                        echo
-                            "
-                        <tr>
-                            <td>$user[id]</td>
-                            <td>$user[username] </td>
-                            <td>$user[email] </td>
-                            <td>$user[password] </td>
-                            <td>$user[role] </td>
-                            <td><a href='editUser.php?id=$user[id]'>Edit</a> </td>
-                            <td><a onclick='deleteUser($user[id])'>Delete</a></td>
-                        </tr>
-                        ";
-                    }
-
-                    ?>
-                </table>
-            </div>
         </div>
     </div>
 
@@ -197,45 +114,6 @@ if (isUserLoggedIn()) {
     </footer>
 </body>
 <script src="../Scripts/main.js"></script>
-
-<script>
-    function deleteUser(userId) {
-
-        var confirmDelete = confirm("Are you sure you want to delete this user?");
-        if (confirmDelete) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/ProjektiWeb/Controllers/deleteController.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-
-                    console.warn(xhr.responseText);
-
-                    location.reload();
-                }
-            };
-            xhr.send("id=" + userId);
-        }
-    }
-    function deleteTeam(teamId) {
-
-        var confirmDelete = confirm("Are you sure you want to delete this team?");
-        if (confirmDelete) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/ProjektiWeb/Controllers/deleteTeamController.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-
-                    console.warn(xhr.responseText);
-
-                    location.reload();
-                }
-            };
-            xhr.send("id=" + teamId);
-        }
-    }
-</script>
 
 </html>
 

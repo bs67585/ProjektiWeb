@@ -15,7 +15,7 @@ include_once "../Controllers/loginController.php";
 </head>
 
 <body>
-    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="container">
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="container"  onsubmit="return validateForm()" novalidate>
             <div class="logo">
                 <img src="../Images/fbk-logo1.png" alt="Logo">
             </div>
@@ -30,34 +30,33 @@ include_once "../Controllers/loginController.php";
             </div>
             <div id="login-pass-error" style="color: red;"></div>
             <div class="btn">
-                <button onclick="validateForm()" type="submit" name="login">Log in</button>
+                <button type="submit" name="login">Log in</button>
             </div>
             <a href="register.php">Sign up</a>
     </form>
 </body>
 <script>
-
     let passwordRegex = /^[a-zA-Z]+[0-9]{1,3}$/;
+    let emailRegex = /^[a-zA-Z.-_]+@+[a-z]+\.+[a-z]{1,3}$/;
 
     function validateForm() {
         let emailLogin = document.getElementById('user-email');
         let passLogin = document.getElementById('pass-login');
 
         if (!emailRegex.test(emailLogin.value)) {
-            document.getElementById('login-email-error').innerHTML = 'Invalid Email'
-            return;
+            document.getElementById('login-email-error').innerHTML = 'Invalid Email';
+            return false;
         } else {
             document.getElementById('login-email-error').innerHTML = ''
         }
         if (!passwordRegex.test(passLogin.value)) {
-            document.getElementById('login-pass-error').innerHTML = 'Invalid Password'
-            return;
+            document.getElementById('login-pass-error').innerHTML = 'Password must start with a letter and have 1 to 3 digits';
+            return false;
         } else {
             document.getElementById('login-pass-error').innerHTML = ''
         }
-
+        return true;
     }
-
 </script>
 
 </html>

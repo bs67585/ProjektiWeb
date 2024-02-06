@@ -12,7 +12,7 @@ if(isset($_POST['logout-btn'])){
 
     $userRepository = new UserController();
 
-    $userRepository->updateUser($id,$email,$username,$password,$role,$active);
+    $userRepository->updateUser($id, $username, $email, $password, $role, $active);
 
     header("location:/ProjektiWeb/Views/index.php");
 }

@@ -11,13 +11,15 @@ if(isset($_POST['registerBtn'])){
         $password = $_POST['password'];
         $id = $username.rand(100,999);
         $active = 0;
-
+        
         $user  = new User($id, $username, $email, $password);
         $userRepository = new UserController();
-
         $userRepository->insertUser($user);
+        
+        // $newUser  = $userRepository->getUserByEmailAndPassword($email,$password);
 
         header("location:/ProjektiWeb/Views/index.php");
+        // exit();
     }
 }
 ?>

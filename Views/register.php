@@ -15,7 +15,7 @@ include_once "../Controllers/registerController.php"
 </head>
 
 <body>
-    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="container" name="register">
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="container" name="register" onsubmit="return validateForm()">
         <div class="logo">
             <img src="../Images/fbk-logo1.png" alt="Logo">
         </div>
@@ -34,7 +34,7 @@ include_once "../Controllers/registerController.php"
             </div>
             <div id="register-pass-error" style="color: red;"></div>
             <div class="btn">
-                <button onclick="validateForm()" type="submit" name="registerBtn">Sign up</button>
+                <button type="submit" name="registerBtn">Sign up</button>
             </div>
             <a href="login.php">Log in</a>
         </form>
