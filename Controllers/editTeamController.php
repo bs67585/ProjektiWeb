@@ -18,9 +18,9 @@ if(isset($_POST['edit-team'])){
 
     $teamRepository->updateTeam($id, $name, $ndeshjet, $fitoret, $humbjet, $diferenca, $piket);
 
-    $admin_id = $_SESSION['id'];
+    $team_id = $_SESSION['id'];
 
-    header("location:/ProjektiWeb/Views/dashboard.php?id=$id");
+    header("location:/ProjektiWeb/Views/dashboard.php?id=$team_id");
 }
 
 ?>
