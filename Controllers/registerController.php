@@ -16,6 +16,8 @@ if(isset($_POST['registerBtn'])){
         $userRepository = new UserController();
 
         $userRepository->insertUser($user);
+
+        header("location:/ProjektiWeb/Views/index.php");
     }
 }
 ?>
