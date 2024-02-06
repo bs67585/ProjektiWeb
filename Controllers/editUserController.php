@@ -19,7 +19,7 @@ if(isset($_POST['edit-user'])){
 
     $admin_id = $_SESSION['id'];
 
-    header("location:/ProjektiWeb/Views/dashboard.php?id=$admin_id");
+    header("location:/ProjektiWeb/Views/dashboard.php?id=$id");
 }
 
 ?>

@@ -2,7 +2,7 @@
 include_once '../Controllers/userController.php';
 include_once '../Models/user.php';
 
-if(isset($_POST['save-btn'])){
+if(isset($_POST['edit-user'])){
     if(empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password'])){
         // echo "<script>alert('Fill all fields!'); </script>";
     }else{

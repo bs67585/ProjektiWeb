@@ -35,14 +35,14 @@ $team = $teamRepository->getTeamById($teamId);
         </div>
     </header>
 
-    <form class="addTeam" action="/ProjektiWeb/Controllers/editUserController.php" method="post">
+    <form class="addTeam" action="/ProjektiWeb/Controllers/editTeamController.php" method="post">
         <p>Name: <input type="text" name="name" value="<?=$team['name']?>"></p>
         <p>Ndeshjet: <input type="text" name="ndeshjet" value="<?=$team['ndeshjet']?>"></p>
         <p>Fitoret: <input type="text" name="fitoret" value="<?=$team['fitoret']?>"></p>
         <p>Humbjet: <input type="text" name="humbjet" value="<?=$team['humbjet']?>"></p>
         <p>Diferenca: <input type="text" name="diferenca" value="<?=$team['diferenca']?>"></p>
         <p>Piket: <input type="text" name="piket" value="<?=$team['piket']?>"></p>
-        <button name="edit-user" type="submit">Edit Team</button>
+        <button name="edit-team" type="submit">Edit Team</button>
     </form>
 
     <footer class="footeri">
