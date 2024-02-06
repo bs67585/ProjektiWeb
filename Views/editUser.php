@@ -92,5 +92,6 @@ $user = $userRepository->getUserById($userId);
         </div>
     </footer>
 </body>
+<script src="../Scripts/main.js"></script>
 
 </html>

@@ -194,6 +194,7 @@ if (isUserLoggedIn()) {
         </div>
     </footer>
 </body>
+<script src="../Scripts/main.js"></script>
 
 <script>
     function deleteUser(userId) {

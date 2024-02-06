@@ -94,5 +94,6 @@ $team = $teamRepository->getTeamById($teamId);
         </div>
     </footer>
 </body>
+<script src="../Scripts/main.js"></script>
 
 </html>
